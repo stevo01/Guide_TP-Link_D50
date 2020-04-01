@@ -1,0 +1,396 @@
+U-Boot 1.1.4 (Oct 13 2015 - 08:38:35)
+
+ap147 - Honey Bee 2.0DRAM:
+sri
+Honey Bee 2.0
+ath_ddr_initial_config(195): (16bit) ddr2 init
+tap = 0x00000003
+Tap (low, high) = (0x6, 0x22)
+Tap values = (0x14, 0x14, 0x14, 0x14)
+64 MB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 156k for U-Boot at: 83fd8000
+Reserving 192k for malloc() at: 83fa8000
+Reserving 44 Bytes for Board Info at: 83fa7fd4
+Reserving 36 Bytes for Global Data at: 83fa7fb0
+Reserving 128k for boot params() at: 83f87fb0
+Stack Pointer at: 83f87f98
+Now running in RAM - U-Boot at: 83fd8000
+Flash Manuf Id 0xc2, DeviceId0 0x20, DeviceId1 0x17
+flash size 8MB, sector count = 128
+Flash:  8 MB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ath_gmac_enet_initialize...
+No valid address in Flash. Using fixed address
+No valid address in Flash. Using fixed address
+ath_gmac_enet_initialize: reset mask:c02200
+Scorpion ---->S27 PHY*
+S27 reg init
+: cfg1 0x800c0000 cfg2 0x7114
+eth0: 00:03:7f:09:0b:ad
+athrs27_phy_setup ATHR_PHY_CONTROL 4 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 4 :10
+eth0 up
+Honey Bee ---->  MAC 1 S27 PHY *
+S27 reg init
+ATHRS27: resetting s27
+ATHRS27: s27 reset done
+: cfg1 0x800c0000 cfg2 0x7214
+eth1: 00:03:7f:09:0b:ad
+athrs27_phy_setup ATHR_PHY_CONTROL 0 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 0 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 1 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 1 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 2 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 2 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 3 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 3 :10
+eth1 up
+eth0, eth1
+Setting 0x181162c0 to 0x50a1a100
+Hit any key to stop autoboot:  0
+ath>
+ath>
+ath>
+ath> setenv ipaddr 192.168.1.101
+ath> setenv serverip 192.168.1.32
+ath> tftpboot 0x81000000 openwrt-19.07.2-ath79-generic-tplink_archer-d50-v1-squashfs-sysupgrade.bin
+Trying eth0
+FAIL
+Trying eth1
+enet1 port3 up
+dup 1 speed 1000
+Using eth1 device
+TFTP from server 192.168.1.32; our IP address is 192.168.1.101
+Filename 'openwrt-19.07.2-ath79-generic-tplink_archer-d50-v1-squashfs-sysupgrade.bin'.
+Load address: 0x81000000
+Loading: #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         #################################################################
+         ##########################
+done
+Bytes transferred = 4456736 (440120 hex)
+ath> erase 0x9f020000 +$filesize
+Erasing flash...
+First 0x2 last 0x46 sector size 0x10000                                                                                                                                                                                                    70
+Erased 69 sectors
+ath> cp.b 0x81000000 0x9f020000 $filesize
+Copy to Flash... write addr: 9f020000
+done
+ath> reset
+
+U-Boot 1.1.4 (Oct 13 2015 - 08:38:35)
+
+ap147 - Honey Bee 2.0DRAM:
+sri
+Honey Bee 2.0
+ath_ddr_initial_config(195): (16bit) ddr2 init
+tap = 0x00000003
+Tap (low, high) = (0x6, 0x22)
+Tap values = (0x14, 0x14, 0x14, 0x14)
+64 MB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 156k for U-Boot at: 83fd8000
+Reserving 192k for malloc() at: 83fa8000
+Reserving 44 Bytes for Board Info at: 83fa7fd4
+Reserving 36 Bytes for Global Data at: 83fa7fb0
+Reserving 128k for boot params() at: 83f87fb0
+Stack Pointer at: 83f87f98
+Now running in RAM - U-Boot at: 83fd8000
+Flash Manuf Id 0xc2, DeviceId0 0x20, DeviceId1 0x17
+flash size 8MB, sector count = 128
+Flash:  8 MB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ath_gmac_enet_initialize...
+No valid address in Flash. Using fixed address
+No valid address in Flash. Using fixed address
+ath_gmac_enet_initialize: reset mask:c02200
+Scorpion ---->S27 PHY*
+S27 reg init
+: cfg1 0x800c0000 cfg2 0x7114
+eth0: 00:03:7f:09:0b:ad
+athrs27_phy_setup ATHR_PHY_CONTROL 4 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 4 :10
+eth0 up
+Honey Bee ---->  MAC 1 S27 PHY *
+S27 reg init
+ATHRS27: resetting s27
+ATHRS27: s27 reset done
+: cfg1 0x800c0000 cfg2 0x7214
+eth1: 00:03:7f:09:0b:ad
+athrs27_phy_setup ATHR_PHY_CONTROL 0 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 0 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 1 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 1 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 2 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 2 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 3 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 3 :10
+eth1 up
+eth0, eth1
+Setting 0x181162c0 to 0x50a1a100
+Hit any key to stop autoboot:  0
+do_bootm:argc=2, addr=0x9f020000
+## Booting image at 9f020000 ...
+   Uncompressing Kernel Image ... OK
+No initrd
+## Transferring control to Linux (at address 80060000) ...
+## Giving linux memsize in bytes, 67108864
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.14.171 (builder@buildhost) (gcc version 7.5.0 (OpenWrt GCC 7.5.0 r10947-65030d81f3)) #0 Thu Feb 27 21:05:12 2020
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00019374 (MIPS 24Kc)
+[    0.000000] MIPS: machine is TP-Link Archer D50 v1
+[    0.000000] SoC: Qualcomm Atheros QCA9533 ver 2 rev 0
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 04000000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Primary instruction cache 64kB, VIPT, 4-way, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 4-way, VIPT, cache aliases, linesize 32 bytes
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000003ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x0000000003ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000003ffffff]
+[    0.000000] random: get_random_bytes called from 0x804ff740 with crng_init=0
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 16256
+[    0.000000] Kernel command line: console=ttyS0,115200n8 rootfstype=squashfs,jffs2
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Writing ErrCtl register=00000000
+[    0.000000] Readback ErrCtl register=00000000
+[    0.000000] Memory: 58328K/65536K available (4028K kernel code, 163K rwdata, 532K rodata, 1220K init, 212K bss, 7208K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] NR_IRQS: 51
+[    0.000000] CPU clock: 650.000 MHz
+[    0.000000] clocksource: MIPS: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 5880801374 ns
+[    0.000008] sched_clock: 32 bits at 325MHz, resolution 3ns, wraps every 6607641598ns
+[    0.008236] Calibrating delay loop... 432.53 BogoMIPS (lpj=2162688)
+[    0.074866] pid_max: default: 32768 minimum: 301
+[    0.079926] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.086897] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.098445] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.108862] futex hash table entries: 256 (order: -1, 3072 bytes)
+[    0.115371] pinctrl core: initialized pinctrl subsystem
+[    0.123148] NET: Registered protocol family 16
+[    0.130828] PCI host bridge /ahb/pcie-controller@180c0000 ranges:
+[    0.137319]  MEM 0x0000000010000000..0x0000000013ffffff
+[    0.142818]   IO 0x0000000000000000..0x0000000000000000
+[    0.164428] PCI host bridge to bus 0000:00
+[    0.168817] pci_bus 0000:00: root bus resource [mem 0x10000000-0x13ffffff]
+[    0.176058] pci_bus 0000:00: root bus resource [io  0x0000]
+[    0.181936] pci_bus 0000:00: root bus resource [??? 0x00000000 flags 0x0]
+[    0.189088] pci_bus 0000:00: No busn resource found for root bus, will use [bus 00-ff]
+[    0.197902] pci 0000:00:00.0: BAR 0: assigned [mem 0x10000000-0x101fffff 64bit]
+[    0.205622] pci 0000:00:00.0: BAR 6: assigned [mem 0x10200000-0x1020ffff pref]
+[    0.216133] clocksource: Switched to clocksource MIPS
+[    0.222450] NET: Registered protocol family 2
+[    0.227933] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.235289] TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.242043] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.248904] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.255068] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.261955] NET: Registered protocol family 1
+[    0.269481] Crashlog allocated RAM at address 0x3f00000
+[    0.276472] workingset: timestamp_bits=30 max_order=14 bucket_order=0
+[    0.288259] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.294407] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CMODE_PRIORITY) (c) 2001-2006 Red Hat, Inc.
+[    0.314103] io scheduler noop registered
+[    0.318289] io scheduler deadline registered (default)
+[    0.324033] ar7200-usb-phy 18030000.usb-phy: phy reset is missing
+[    0.332549] pinctrl-single 1804002c.pinmux: 576 pins at pa b804002c size 72
+[    0.340891] Serial: 8250/16550 driver, 16 ports, IRQ sharing enabled
+[    0.349938] console [ttyS0] disabled
+[    0.353743] 18020000.uart: ttyS0 at MMIO 0x18020000 (irq = 9, base_baud = 1562500) is a 16550A
+[    0.362893] console [ttyS0] enabled
+[    0.362893] console [ttyS0] enabled
+[    0.370461] bootconsole [early0] disabled
+[    0.370461] bootconsole [early0] disabled
+[    0.387566] m25p80 spi0.0: mx25l6405d (8192 Kbytes)
+[    0.392659] 6 fixed-partitions partitions found on MTD device spi0.0
+[    0.399270] Creating 6 MTD partitions on "spi0.0":
+[    0.404224] 0x000000000000-0x000000020000 : "u-boot"
+[    0.410166] 0x000000020000-0x0000007c0000 : "firmware"
+[    0.416454] 2 tplink-fw partitions found on MTD device firmware
+[    0.422573] Creating 2 MTD partitions on "firmware":
+[    0.427738] 0x000000000000-0x000000185ba2 : "kernel"
+[    0.433598] 0x000000185ba4-0x0000007a0000 : "rootfs"
+[    0.439442] mtd: device 3 (rootfs) set to be root filesystem
+[    0.445328] 1 squashfs-split partitions found on MTD device rootfs
+[    0.451784] 0x000000440000-0x0000007a0000 : "rootfs_data"
+[    0.458064] 0x0000007c0000-0x0000007d0000 : "config"
+[    0.463923] 0x0000007d0000-0x0000007e0000 : "romfile"
+[    0.469939] 0x0000007e0000-0x0000007f0000 : "rom"
+[    0.475493] 0x0000007f0000-0x000000800000 : "art"
+[    0.482186] libphy: Fixed MDIO Bus: probed
+[    0.827239] ag71xx 19000000.eth: Could not connect to PHY device. Deferring probe.
+[    1.506504] libphy: ag71xx_mdio: probed
+[    1.511926] libphy: ar8xxx-mdio: probed
+[    1.524667] switch0: Atheros AR8229 rev. 1 switch registered on mdio-bus.0
+[    1.577605] ag71xx 1a000000.eth: connected to PHY at fixed-0:00 [uid=00000000, driver=Generic PHY]
+[    1.587542] eth0: Atheros AG71xx at 0xba000000, irq 5, mode: gmii
+[    1.596504] NET: Registered protocol family 10
+[    1.606747] Segment Routing with IPv6
+[    1.610634] NET: Registered protocol family 17
+[    1.615265] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    1.628690] 8021q: 802.1Q VLAN Support v1.8
+[    1.968404] ag71xx 19000000.eth: connected to PHY at mdio-bus.0:1f:04 [uid=004dd042, driver=Generic PHY]
+[    1.979112] eth1: Atheros AG71xx at 0xb9000000, irq 4, mode: mii
+[    1.986106] hctosys: unable to open rtc device (rtc0)
+[    1.997518] VFS: Mounted root (squashfs filesystem) readonly on device 31:3.
+[    2.011419] Freeing unused kernel memory: 1220K
+[    2.016099] This architecture does not have kernel memory protection.
+[    2.576152] random: fast init done
+[    2.670418] init: Console is alive
+[    2.674164] init: - watchdog -
+[    3.783630] kmodloader: loading kernel modules from /etc/modules-boot.d/*
+[    4.021663] usbcore: registered new interface driver usbfs
+[    4.027465] usbcore: registered new interface driver hub
+[    4.033042] usbcore: registered new device driver usb
+[    4.044374] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    4.052773] ehci-platform: EHCI generic platform driver
+[    4.058488] ehci-platform 1b000000.usb: EHCI Host Controller
+[    4.064387] ehci-platform 1b000000.usb: new USB bus registered, assigned bus number 1
+[    4.072608] ehci-platform 1b000000.usb: irq 3, io mem 0x1b000000
+[    4.106155] ehci-platform 1b000000.usb: USB 2.0 started, EHCI 1.00
+[    4.113373] hub 1-0:1.0: USB hub found
+[    4.117672] hub 1-0:1.0: 1 port detected
+[    4.122953] kmodloader: done loading kernel modules from /etc/modules-boot.d/*
+[    4.133134] init: - preinit -
+[    5.308729] random: jshn: uninitialized urandom read (4 bytes read)
+[    5.582676] random: jshn: uninitialized urandom read (4 bytes read)
+[    5.792028] random: jshn: uninitialized urandom read (4 bytes read)
+[    6.583721] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    6.589895] IPv6: ADDRCONF(NETDEV_UP): eth0.1: link is not ready
+[    6.636123] urandom_read: 4 callbacks suppressed
+[    6.640965] random: procd: uninitialized urandom read (4 bytes read)
+Press the [f] key and hit [enter] to enter failsafe mode
+Press the [1], [2], [3] or [4] key and hit [enter] to select the debug level
+[    7.637315] eth0: link up (1000Mbps/Full duplex)
+[    7.642115] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[    7.649033] IPv6: ADDRCONF(NETDEV_CHANGE): eth0.1: link becomes ready
+[    9.793001] mount_root: jffs2 not ready yet, using temporary tmpfs overlay
+[    9.826368] urandom-seed: Seed file not found (/etc/urandom.seed)
+[    9.931423] eth0: link down
+[    9.953116] procd: - early -
+[    9.956537] procd: - watchdog -
+[   10.651008] procd: - watchdog -
+[   10.654572] procd: - ubus -
+[   10.724426] random: ubusd: uninitialized urandom read (4 bytes read)
+[   10.857529] random: ubusd: uninitialized urandom read (4 bytes read)
+[   10.865406] procd: - init -
+Please press Enter to activate this console.
+[   11.801800] kmodloader: loading kernel modules from /etc/modules.d/*
+[   11.822511] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[   11.853575] Loading modules backported from Linux version v4.19.98-0-gd183c8e2647a
+[   11.861459] Backport generated by backports.git v4.19.98-1-0-g8204eb99
+[   11.888484] ip_tables: (C) 2000-2006 Netfilter Core Team
+[   11.914097] nf_conntrack version 0.5.0 (1024 buckets, 4096 max)
+[   12.038279] xt_time: kernel timezone is -0000
+[   12.148801] PPP generic driver version 2.4.2
+[   12.167057] NET: Registered protocol family 24
+[   12.229328] ath10k 4.19 driver, optimized for CT firmware, probing pci device: 0x3c.
+[   12.247199] PCI: Enabling device 0000:00:00.0 (0000 -> 0002)
+[   12.253216] ath10k_pci 0000:00:00.0: pci irq legacy oper_irq_mode 1 irq_mode 0 reset_mode 0
+[   12.262127] urngd: v1.0.2 started.
+[   12.541773] random: crng init done
+[   12.566319] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/fwcfg-pci-0000:00:00.0.txt failed with error -2
+[   12.577227] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   12.896910] firmware ath10k!fwcfg-pci-0000:00:00.0.txt: firmware_loading_store: map pages failed
+[   12.906338] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/pre-cal-pci-0000:00:00.0.bin failed with error -2
+[   12.917421] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   13.326922] firmware ath10k!pre-cal-pci-0000:00:00.0.bin: firmware_loading_store: map pages failed
+[   13.336520] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/cal-pci-0000:00:00.0.bin failed with error -2
+[   13.347259] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   13.897404] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/QCA988X/hw2.0/ct-firmware-5.bin failed with error -2
+[   13.908784] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   14.212134] firmware ath10k!QCA988X!hw2.0!ct-firmware-5.bin: firmware_loading_store: map pages failed
+[   14.222008] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/QCA988X/hw2.0/ct-firmware-2.bin failed with error -2
+[   14.233366] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   14.642071] firmware ath10k!QCA988X!hw2.0!ct-firmware-2.bin: firmware_loading_store: map pages failed
+[   14.651944] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/QCA988X/hw2.0/firmware-6.bin failed with error -2
+[   14.663034] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   14.933488] firmware ath10k!QCA988X!hw2.0!firmware-6.bin: firmware_loading_store: map pages failed
+[   14.943100] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/QCA988X/hw2.0/firmware-5.bin failed with error -2
+[   14.954189] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   15.156470] firmware ath10k!QCA988X!hw2.0!firmware-5.bin: firmware_loading_store: map pages failed
+[   15.166006] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/QCA988X/hw2.0/firmware-4.bin failed with error -2
+[   15.177105] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   15.380858] firmware ath10k!QCA988X!hw2.0!firmware-4.bin: firmware_loading_store: map pages failed
+[   15.390467] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/QCA988X/hw2.0/firmware-3.bin failed with error -2
+[   15.401563] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   15.603251] firmware ath10k!QCA988X!hw2.0!firmware-3.bin: firmware_loading_store: map pages failed
+[   15.840509] ath10k_pci 0000:00:00.0: qca988x hw2.0 target 0x4100016c chip_id 0x043222ff sub 0000:0000
+[   15.850095] ath10k_pci 0000:00:00.0: kconfig debug 0 debugfs 1 tracing 0 dfs 1 testmode 0
+[   15.863552] ath10k_pci 0000:00:00.0: firmware ver 10.1-ct-8x-__fW-022-b0e1b7cd api 2 features wmi-10.x,has-wmi-mgmt-tx,mfp,txstatus-noack,wmi-10.x-CT,ratemask-CT,txrate-CT,get-temp-CT,tx-rc-CT,cust-stats-CT,retry-gt2-CT,txrate2-CT,beacon-cb-CT,wmi-block-ack-CT crc32 1e527180
+[   15.916419] ath10k_pci 0000:00:00.0: Direct firmware load for ath10k/QCA988X/hw2.0/board-2.bin failed with error -2
+[   15.927229] ath10k_pci 0000:00:00.0: Falling back to user helper
+[   16.031948] firmware ath10k!QCA988X!hw2.0!board-2.bin: firmware_loading_store: map pages failed
+[   16.043211] ath10k_pci 0000:00:00.0: board_file api 1 bmi_id N/A crc32 bebc7c08
+[   16.993316] ath10k_pci 0000:00:00.0: 10.1 wmi init: vdevs: 16  peers: 127  tid: 256
+[   17.011433] ath10k_pci 0000:00:00.0: wmi print 'P 128 V 8 T 410'
+[   17.017720] ath10k_pci 0000:00:00.0: wmi print 'msdu-desc: 1424  sw-crypt: 0 ct-sta: 0'
+[   17.025995] ath10k_pci 0000:00:00.0: wmi print 'alloc rem: 20904 iram: 26056'
+[   17.082753] ath10k_pci 0000:00:00.0: htt-ver 2.1 wmi-op 2 htt-op 2 cal file max-sta 128 raw 0 hwcrypto 1
+[   17.098018] ath10k_pci 0000:00:00.0: NOTE:  Firmware DBGLOG output disabled in debug_mask: 0x10000000
+[   17.333486] ieee80211 phy1: Atheros AR9531 Rev:2 mem=0xb8100000, irq=13
+[   17.408483] kmodloader: done loading kernel modules from /etc/modules.d/*
+[   46.403467] jffs2_scan_eraseblock(): End of filesystem marker found at 0x0
+[   46.430279] jffs2_build_filesystem(): unlocking the mtd device...
+[   46.430291] done.
+[   46.438738] jffs2_build_filesystem(): erasing all blocks after the end marker...
+[   46.710401] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[   46.725436] eth0: link up (1000Mbps/Full duplex)
+[   46.739210] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[   46.781816] br-lan: port 1(eth0.1) entered blocking state
+[   46.787608] br-lan: port 1(eth0.1) entered disabled state
+[   46.793491] device eth0.1 entered promiscuous mode
+[   46.798500] device eth0 entered promiscuous mode
+[   46.860988] br-lan: port 1(eth0.1) entered blocking state
+[   46.866625] br-lan: port 1(eth0.1) entered forwarding state
+[   46.872552] IPv6: ADDRCONF(NETDEV_UP): br-lan: link is not ready
+[   47.828266] IPv6: ADDRCONF(NETDEV_CHANGE): br-lan: link becomes ready
+[   64.893635] done.
+[   64.895713] jffs2: notice: (1563) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+[   65.128821] overlayfs: upper fs does not support tmpfile.
+
+
+
+BusyBox v1.30.1 () built-in shell (ash)
+
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ OpenWrt 19.07.2, r10947-65030d81f3
+ -----------------------------------------------------
+=== WARNING! =====================================
+There is no root password defined on this device!
+Use the "passwd" command to set up a new password
+in order to prevent unauthorized SSH logins.
+--------------------------------------------------
+root@OpenWrt:/#
