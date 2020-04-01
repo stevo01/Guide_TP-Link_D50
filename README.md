@@ -12,20 +12,20 @@ This document is an guide with step by step instructions.
 You need to remove the two screws which are behind the label on the housing underside. You can remove the housing topside from the underside after that. note: some force is needed to open all the plastic latches
 
 ## setup tftp server
-There are a lot of different tftp server available.
-I used PUMKIN for windows which allows you an easy and painless setup:
+You need a tftp server for the update/flash procedure. I used PUMKIN for windows which allows you an easy and painless setup:
 
 Please download the tftp server application [5] and the Openwrt image [2] to your windows workstation. After Installation of PumpKIN you need to specify the "tftp filesystem root" (this is the location of your Openwrt image file).
 
-## 3 - I added some pins to PCB of Router to allow connection with USB/UART adapter
-see picture photos/uart_connected.jpg 
-
+## 3 - connect UART adapter
+I added some pins to PCB of Router to allow connection with USB/UART adapter
+see picture photos/uart_connected.jpg
 
 ## 4 - flash procedures
 The following instructions require a connection to the J2 UART interface.
 
 note:
 - you need tftp server for data transfer of openwrt image (openwrt-19.07.2-ath79-generic-tplink_archer-d50-v1-squashfs-sysupgrade.bin).
+- you need to connect ethernet port of the router with your home network
 - ip address of the tftp server is 192.168.1.32 in my network.
 
 ### Flash instruction under U-Boot, using UART
