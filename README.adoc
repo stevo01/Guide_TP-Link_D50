@@ -56,7 +56,7 @@ reset
 ----
 
 === Basic configuration of router
-==== Set static IP adress
+==== Set static IP address
 
 edit file /etc/config/network
 
@@ -73,14 +73,27 @@ config interface 'lan'
         option gateway '192.168.1.1'
 ----
 
+==== Set dynamic IP address
+
+edit file /etc/config/network
+
+[code, bash]
+----
+config interface 'lan'
+        option device 'br-lan'
+        option proto 'dhcp'
+----
+
 == Bookmark
 
   - link:https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f5d2c91415a68f554815860d574145644fc31c16[[01\] patch with first support and flash instructions]
 
-  - link:http://downloads.openwrt.org/releases/19.07.2/targets/ath79/generic/openwrt-19.07.2-ath79-generic-tplink_archer-d50-v1-squashfs-sysupgrade.bin[[02\] download image]
+  - link:http://downloads.openwrt.org/releases/19.07.2/targets/ath79/generic/openwrt-19.07.2-ath79-generic-tplink_archer-d50-v1-squashfs-sysupgrade.bin[[02\] download image v19.07.2]
 
-  - link:https://forum.openwrt.org/t/archer-d50-support/38613[[03\] OpenWrt Forum "Archer D50 Support"]
+  - link:https://downloads.openwrt.org/releases/24.10.0/targets/ath79/generic/openwrt-24.10.0-ath79-generic-tplink_archer-d50-v1-squashfs-sysupgrade.bin[[03\] download image v24.10.0]
 
-  - link:https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_d50_v1[[04\] OpenWrt Techdata TP-Link Archer D50 v1]
+  - link:https://forum.openwrt.org/t/archer-d50-support/38613[[04\] OpenWrt Forum "Archer D50 Support"]
 
-  - link:http://kin.klever.net/dist/pumpkin-2.7.3-exe.zip[[05\] Pumpkin TFTP Server for Windows]
+  - link:https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_d50_v1[[05\] OpenWrt Techdata TP-Link Archer D50 v1]
+
+  - link:http://kin.klever.net/dist/pumpkin-2.7.3-exe.zip[[06\] Pumpkin TFTP Server for Windows]
